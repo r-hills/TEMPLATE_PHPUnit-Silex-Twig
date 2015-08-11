@@ -6,12 +6,30 @@
 </head>
 <body>
 	<div class='container'>
-		<h1> </h1>
-		<p> </p>
-		<form action='/view'>
+		<h1> Anagram Tester </h1>
+		<p> Enter a word to test, and possible anagrams </p>
+		<form action='/view_anagram_results'>
 			<div class='form-group'>
-				<label for='name'> Name: </label>
-				<input id='name' name='name' class='form-control' type='text'>
+				<div class='row'>
+					<div class='col-md-4'>
+						<label for='string'> Enter Word to Test: </label>
+						<input id='string' name='string' class='form-control' type='text'>
+					</div>
+					<div class='col-md-4'>
+						<label for='ana1'> Enter Possible Anagram 1: </label>
+						<input id='ana1' name='ana1' class='form-control' type='text'>
+						<label for='ana2'> Enter Possible Anagram 2: </label>
+						<input id='ana2' name='string' class='form-control' type='text'>
+						<label for='ana3'> Enter Possible Anagram 3: </label>
+						<input id='ana3' name='ana3' class='form-control' type='text'>
+						<label for='ana4'> Enter Possible Anagram 4: </label>
+						<input id='ana4' name='ana4' class='form-control' type='text'>
+						<label for='ana5'> Enter Possible Anagram 5: </label>
+						<input id='ana5' name='ana5' class='form-control' type='text'>
+						<label for='ana6'> Enter Possible Anagram 6: </label>
+						<input id='ana6' name='ana6' class='form-control' type='text'>
+					</div>
+				</div>
 			</div>
 			<button type='submit' class='btn-success'>Submit</button>
 		</form>
