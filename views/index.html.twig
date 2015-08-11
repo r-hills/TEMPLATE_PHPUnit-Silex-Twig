@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css'>
+    <title>Search Results</title>
+</head>
+<body>
+    <div class='container'>
+        <form action='/create_contact' method='post'>
+            <br>
+            <div class='form-group'>
+                
+                <div class='row'>
+                    <div class='col-md-4'>
+                        <h3> Enter a new Contact </h3>
+                        <br>
+                    </div>
+                </div>  <!-- End of row -->
+
+                <div class='row'>
+                    <div class='col-md-4'>
+                        <label for='name'>Enter Contact Name:</label>
+                        <input id='name' name='name' class='form-control' type='text'>
+                    </div>
+                    <div class='col-md-4'>
+                        <label for='phone'>Enter Phone:</label>
+                        <input id='phone' name='phone' class='form-control' type='tel'>
+                    </div>
+                </div>  <!-- End of row-->
+                <br>
+
+                <div class='row'>
+                    <div class='col-md-4'>
+                        <label for='address'>Enter Address:</label>
+                        <input id='address' name='address' class='form-control' type='text'>
+                    </div>
+                </div> <!-- End of row-->
+
+                <br>
+            </div> <!-- End of form group -->
+            
+            <div class='row'>
+                <div class='col-md-4'>
+                    <button type='submit'>Enter New Contact</button>
+                    </br>
+                </div>
+            </div>
+        </form>
+        <br>
+        <form action='/delete_contacts'>
+            <div class='row'>
+                <div class='col-md-4'>
+                    <button type='submit'>Delete All Contacts</button>
+                </div>
+            </div>
+        </form>
+        <div class='row'>
+            <div class='col-md-4'>
+                <br>
+                <strong>Contacts:</strong>
+                <br>
+            </div>
+        </div>
+
+        {% if list_of_contacts is not empty %}
+
+            {% for contact in list_of_contacts %}
+
+                <div class='row'>
+                    <br>
+                    <div class='col-md-3'>Name: <strong>{{ contact.getName }}</strong></div>
+                    <div class='col-md-3'>Phone: {{ contact.getPhone }}</div>
+                    <div class='col-md-6'>Address: {{ contact.getAddress }}</div>
+                </div>
+
+            {% endfor %}
+
+        {% else %}
+            <div class='row'>
+                <div class='col-md-4'>
+                    <br>
+                    <strong> No contacts available </strong>
+                </div>
+            </div>
+        {% endif %}
+
+    </div> <!-- End of container -->
+</body>
+</html>
